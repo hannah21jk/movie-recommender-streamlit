@@ -1,8 +1,10 @@
-mkdir -p ~/.streamlit/
+#!/bin/bash
 
-echo "\
-[server]\n\
-port = \$PORT\n\
-enableCORS = false\n\
-headless = true\n\
-" > ~/.streamlit/config.toml
+
+pip install -r requirements.txt
+
+
+echo "Environment setup complete."
+
+
+streamlit run app.py --server.port $PORT --server.enableCORS false --headless true
